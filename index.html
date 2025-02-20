@@ -12,7 +12,7 @@
 <body>
 
     <div id="header">
-        <div class="container">
+        
             <nav>
                 <p>VISH@L.</p>
                 <ul id="sidemenu">
@@ -25,11 +25,13 @@
                 </ul>
                 <i class="fas-icons fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div class="header-text">
-                <p>Code Enthusiast.</p>
-                <h1>Hi, I'm <span>Vishal</span> , <br>a web developer passionate <br> about building user-friendly <br> experiences.</h1>
+            <div class="container">
+                <div class="header-text">
+                    <p>Code Enthusiast.</p>
+                    <h1>Hi, I'm <span>Vishal</span>, <br>a web developer and competitive <br> passionate about building <br> user-friendly experiences and <br>solving complex problems using DSA.</h1>
+                </div>
             </div>
-        </div>
+        
     </div>
     <!-- ............ABOUT............... -->
     <div id="about">
@@ -40,7 +42,7 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
-                    <p>Hello, I am Vishal, a Web Developer and codewriter. Here, I enjoy my expertise in coding and building innovative digital solutions. I am a curious person; I really love to explore new technologies, follow the latest developments, and keep upgrading my level of skills continuously. Check out some of my projects; let's connect!</p>
+                    <p>Hello, I am Vishal, a Web Developer and codewriter. Here, I enjoy my expertise in<br> coding and building innovative digital solutions. I am a curious person; <br>I really love to explore new technologies, follow the latest developments, and I<br>keep upgrading my level of skills continuously. Check out some of my projects; let's connect!</p>
                     <div class="tab-title">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -204,6 +206,7 @@
             <p>Copyright @ Vishal . Made by <i class="fa-regular fa-heart"></i> Vishal</p>
         </div>
     </div>
+    <script src="script.js"></script>
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tabContents");
