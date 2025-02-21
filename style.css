@@ -412,7 +412,7 @@ nav .fas-icons{
     }
     .header-text {
         margin-top: 30vh;
-        font-size: 16px;
+        font-size: 20px;
     }
     .header-text h1 {
         font-size: 30px;
@@ -453,7 +453,7 @@ nav .fas-icons{
         margin-bottom: 30px;
     }
     .about-col-1 img {
-        display: none;
+        height: 250px;
     }
     .about-col-2 {
         font-size: 16px;
