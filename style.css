@@ -119,8 +119,8 @@ nav.scrolled ul li a{
    /* background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     padding: 20px;
     border-radius: 10px;
-    margin-top: 30vh;
-    font-size: 30px;
+    margin-top: 25vh;
+    font-size: 20px;
 }
 
 
@@ -490,8 +490,8 @@ nav .fas-icons{
         display: none;
     }
     .header-text {
-        margin-top: 30vh;
-        font-size: 20px;
+        margin-top: 20vh;
+        font-size: 18px;
     }
     .header-text h1 {
         font-size: 30px;
@@ -562,28 +562,30 @@ nav .fas-icons{
 
  .work.work1 img {
         width: 100%;
-        height: auto;
-        max-height: 200px;
-        object-fit: contain;
+        height: 250px;
+        object-fit: scale-down;
+        border-radius: 8px 8px 0 0;
+        display: block;
+        background: #181818;
+        padding: 10px;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), /* Outer glow */
+                    inset 0 0 10px rgba(0, 255, 255, 0.2); /* Inner glow */
+        transition: box-shadow 0.3s ease;
+    }
+
+    .work.work1 img:hover {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), /* Stronger outer glow on hover */
+                    inset 0 0 15px rgba(0, 255, 255, 0.3); /* Stronger inner glow on hover */
+    }
+
+    .work.work1 {
+        background: #181818;
         border-radius: 8px;
-    }
-
-.certificate_bottom {
-        padding: 8px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-size: 14px;
-    }
-
-#certificate .work-list {
-        gap: 20px;
-        padding: 0 15px;
-    }
-
-.cotainer-cert {
-        margin-bottom: 50px;
+        overflow: hidden;
+        margin-bottom: 20px;
     }
 }
+
 #msg{
 color: #4878f1;
 font-size: 20px;
@@ -949,9 +951,9 @@ font-family: 'Courier New', Courier, monospace;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(201, 255, 255, 0.1);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(251, 251, 251);
     transition: all 0.3s ease;
 }
 
