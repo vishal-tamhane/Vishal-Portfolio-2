@@ -942,8 +942,8 @@ font-family: 'Courier New', Courier, monospace;
 }
 
 #header .social-icons a {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -956,7 +956,7 @@ font-family: 'Courier New', Courier, monospace;
 }
 
 #header .social-icons a i {
-    font-size: 20px;
+    font-size: 40px;
     color: aqua;
     transition: all 0.3s ease;
 }
@@ -974,8 +974,8 @@ font-family: 'Courier New', Courier, monospace;
 @media only screen and (max-width: 600px) {
     #header .social-icons {
         position: absolute;
-        bottom: 50px;
-        left: 50%;
+        /* bottom: 1px; */
+        left: 45%;
         transform: translateX(-50%);
         flex-direction: row;
         right: auto;
@@ -983,12 +983,12 @@ font-family: 'Courier New', Courier, monospace;
     }
     
     #header .social-icons a {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
     
     #header .social-icons a i {
-        font-size: 18px;
+        font-size: 28px;
     }
     
     #header .social-icons a:hover {
