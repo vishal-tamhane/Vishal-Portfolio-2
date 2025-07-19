@@ -522,7 +522,7 @@ nav .fas-icons{
         cursor: pointer;
     }
     .subtitle {
-        font-size: 40px;
+        font-size: 30px;
         font-weight: 500;
     }
     .about-col-1, .about-col-2 {
@@ -809,7 +809,9 @@ font-family: 'Courier New', Courier, monospace;
 }
 .project-preview {
   background: #202020;
-  border-top: 2px solid #232323;
+  border-top: 3px solid #e6e7ed;
+  border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
   padding: 1rem 1.2rem 0.7rem 1.2rem;
   display: flex;
   flex-direction: column;
@@ -977,7 +979,7 @@ font-family: 'Courier New', Courier, monospace;
     #header .social-icons {
         position: absolute;
         /* bottom: 1px; */
-        left: 45%;
+        left: 50%;
         transform: translateX(-50%);
         flex-direction: row;
         right: auto;
@@ -996,4 +998,16 @@ font-family: 'Courier New', Courier, monospace;
     #header .social-icons a:hover {
         transform: translateY(-5px);
     }
+}
+
+/* Add these to your existing social-icons styles */
+.social-icons .codolio-link i {
+    font-size: 20px;
+    color: aqua;
+    transition: all 0.3s ease;
+}
+
+.social-icons .codolio-link:hover i {
+    transform: translateY(-5px);
+    color: #4878f1; /* A blue shade that matches Codolio's theme */
 }
