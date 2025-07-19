@@ -37,7 +37,7 @@ body {
 
 
 nav p {
-    font-size: 45px;
+    font-size: 35px;
     font-weight: 500;
     font-family:'Times New Roman', Times, serif;
 }
@@ -131,6 +131,15 @@ nav.scrolled ul li a{
 
 .header-text h1 span {
     color: #04cff3;
+}
+@media only screen and (max-width: 600px) {
+    nav p {
+        font-size: 28px;
+    }
+    
+    nav.scrolled p {
+        font-size: 24px;
+    }
 }
 /* .....................ABOUT....................... */
 #about {
@@ -545,13 +554,13 @@ nav .fas-icons{
       margin-right: 15px;  
     } 
     /* Certificate section fixes */
-    .work.work1 {
+.work.work1 {
         width: 100%;
         height: auto;
         margin-bottom: 20px;
     }
 
-    .work.work1 img {
+ .work.work1 img {
         width: 100%;
         height: auto;
         max-height: 200px;
@@ -559,19 +568,19 @@ nav .fas-icons{
         border-radius: 8px;
     }
 
-    .certificate_bottom {
+.certificate_bottom {
         padding: 8px;
         margin-top: 5px;
         margin-bottom: 5px;
         font-size: 14px;
     }
 
-    #certificate .work-list {
+#certificate .work-list {
         gap: 20px;
         padding: 0 15px;
     }
 
-    .cotainer-cert {
+.cotainer-cert {
         margin-bottom: 50px;
     }
 }
@@ -736,6 +745,7 @@ font-family: 'Courier New', Courier, monospace;
 .project-card {
   background: #181818;
   border-radius: 16px;
+  border: 2px solid #014f51;
   box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   overflow: hidden;
   display: flex;
@@ -900,4 +910,88 @@ font-family: 'Courier New', Courier, monospace;
     margin-bottom: 10px;   
     font-weight: 600;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Social Icons Styling for Header Section */
+/* .container .social-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 50px;
+    left: 10%;
+} */
+
+#header .social-icons {
+    position: fixed;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Add this new class for hiding icons on scroll */
+#header .social-icons.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#header .social-icons a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#header .social-icons a i {
+    font-size: 20px;
+    color: aqua;
+    transition: all 0.3s ease;
+}
+
+#header .social-icons a:hover {
+    transform: translateX(-5px);
+    background: aqua;
+}
+
+#header .social-icons a:hover i {
+    color: #080808;
+}
+
+/* Mobile Responsive Design */
+@media only screen and (max-width: 600px) {
+    #header .social-icons {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        right: auto;
+        top: auto;
+    }
+    
+    #header .social-icons a {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #header .social-icons a i {
+        font-size: 18px;
+    }
+    
+    #header .social-icons a:hover {
+        transform: translateY(-5px);
+    }
 }
