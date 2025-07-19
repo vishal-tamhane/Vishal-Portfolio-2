@@ -253,71 +253,123 @@ nav.scrolled ul li a{
 }
 
 /* ......................PORTFOLIO..................... */
+
 #portfolio {
     padding: 50px 0;
-}
-
-.work img {
-    width: 100%;
-    height: 270px;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
 }
 
 .work-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
+    gap: 40px;
     margin-top: 50px;
 }
 
 .work {
-    border-radius: 10px ;
-    border: 0.5px solid #370f37;
     position: relative;
+    border-radius: 10px;
     overflow: hidden;
-    color: #080808;
+    border: 0.5px solid #370f37;
+    background-color: #fff;
+}
+
+.work img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
 .work:hover img {
     transform: scale(1.1);
-    color: #080808;
 }
 
 .layer {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 0;
+    width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6), aqua);
     border-radius: 10px;
-    position: absolute;
-    left: 0;
-    top: 0;
     overflow: hidden;
+    z-index: 1;
+    transition: height 0.5s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
     text-align: center;
+    padding: 0 20px;
+    color: #fff;
     font-size: 15px;
-    transition: height 0.5s;
-}
-
-.layer h3 {
-    font-weight: 800;
-    color: #a1e0f7;
-    margin-bottom: 30px;
-    /* background: #92ddf3; */
 }
 
 .work:hover .layer {
     height: 100%;
 }
 
+.layer h3 {
+    font-weight: 800;
+    color: #a1e0f7;
+    margin-bottom: 20px;
+}
+
+.preview-section {
+    padding: 15px;
+    background: #f5f5f5;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    z-index: 0;
+    position: relative;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: #e0e0e0;
+    padding: 3px 8px;
+    
+    border-radius:4px;
+    font-size: 0.8em;
+}
+
+.preview-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.github-link, .demo-link {
+    display: flex;
+    border: 0.5px solid #014f51;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover, .demo-link:hover {
+    color: #0077b5;
+}
+
+.github-icon, .demo-icon {
+    width: 20px;
+    height: 20px;
+}
+
 .btn {
     display: block;
-
     margin: 50px auto;
     width: fit-content;
     border: 1px solid aqua;
@@ -325,13 +377,14 @@ nav.scrolled ul li a{
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.5s;
+    transition: background 0.5s, color 0.5s;
 }
 
 .btn:hover {
     background: aqua;
     color: #080808;
 }
+
 
 /* ................CONTACT............. */
 
@@ -491,6 +544,36 @@ nav .fas-icons{
     .tab-links {
       margin-right: 15px;  
     } 
+    /* Certificate section fixes */
+    .work.work1 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .work.work1 img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .certificate_bottom {
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    #certificate .work-list {
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .cotainer-cert {
+        margin-bottom: 50px;
+    }
 }
 #msg{
 color: #4878f1;
@@ -515,4 +598,306 @@ font-family: 'Courier New', Courier, monospace;
 }
 .cotainer-cert{
     margin-bottom: 100px;
+}
+
+/* --- Project Preview Card Styles --- */
+.preview-section.card {
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 1.2rem 1.5rem;
+  margin: 1.2rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.preview-section.card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  transform: none;
+}
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+.tech-tag {
+  background: #222;
+  color: #00fff7;
+  border-radius: 999px;
+  padding: 0.25em 0.9em;
+  font-size: 0.95em;
+  font-weight: 500;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+  letter-spacing: 0.03em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.preview-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+.github-link, .demo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  color: #fff;
+  background: #232323;
+  border-radius: 8px;
+  padding: 0.45em 1.1em;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.github-link i, .demo-link i {
+  font-size: 1.1em;
+}
+.github-link:hover, .demo-link:hover {
+  background: #00fff7;
+  color: #181818;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Add hover effect to project image */
+.work img {
+  transition: transform 0.35s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0.2,0.2,1);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  border-radius: 12px;
+}
+.work img:hover {
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+  z-index: 2;
+}
+
+/* --- Work Card Hover Effect --- */
+.work {
+  transition: transform 0.35s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0.2,0.2,1);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  border-radius: 16px;
+  background: #181818;
+  margin-bottom: 2.2rem;
+  position: relative;
+  overflow: visible;
+}
+.work:hover {
+  transform: scale(1.04) translateY(-6px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+  z-index: 2;
+}
+
+/* Remove hover effect from .preview-section.card */
+.preview-section.card,
+.preview-section.card:hover {
+  box-shadow: none;
+  transform: none;
+  background: #202020;
+  position: relative;
+  z-index: 3;
+  margin-top: -1.2rem;
+  border-top: 2px solid #232323;
+}
+
+/* Remove hover effect from .work img */
+.work img,
+.work img:hover {
+  transition: none;
+  box-shadow: none;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+/* Ensure .layer stays above image but below preview-section */
+.work .layer {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 700px) {
+  .preview-section.card {
+    margin-top: -0.7rem;
+    font-size: 0.98em;
+  }
+  .preview-links {
+    gap: 0.7rem;
+  }
+  .tech-tag {
+    font-size: 0.88em;
+    padding: 0.18em 0.7em;
+  }
+}
+
+/* --- Modern Project Card Styles --- */
+.project-card {
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+.project-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+  transform: translateY(-4px) scale(1.03);
+}
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4,0.2,0.2,1);
+  display: block;
+}
+.project-card:hover .project-image {
+  transform: scale(1.08);
+}
+.project-overlay {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 60%, rgba(0,255,255,0.3) 100%);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: 2;
+}
+.project-card:hover .project-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #00fff7;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.project-desc {
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+.project-preview {
+  background: #202020;
+  border-top: 2px solid #232323;
+  padding: 1rem 1.2rem 0.7rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  z-index: 3;
+}
+.project-preview .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.project-preview .tech-tag {
+  background: #222;
+  color: #00fff7;
+  border-radius: 999px;
+  border: 0.5px solid #014f51;
+  padding: 0.25em 0.9em;
+  font-size: 0.95em;
+  font-weight: 500;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+  letter-spacing: 0.03em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.project-preview .preview-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.2rem;
+}
+.project-preview .github-link, .project-preview .demo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  color: #fff;
+  background: #232323;
+  border-radius: 8px;
+  padding: 0.45em 1.1em;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.project-preview .github-link i, .project-preview .demo-link i {
+  font-size: 1.1em;
+}
+.project-preview .github-link:hover, .project-preview .demo-link:hover {
+  background: #00fff7;
+  color: #181818;
+  transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 700px) {
+  .project-card {
+    font-size: 0.98em;
+  }
+  .project-image-container {
+    height: 160px;
+  }
+  .project-preview {
+    padding: 0.7rem 0.6rem 0.5rem 0.6rem;
+  }
+  .project-title {
+    font-size: 1.05rem;
+  }
+  .project-desc {
+    font-size: 0.92rem;
+  }
+  /* Always show overlay on mobile */
+  .project-overlay {
+    opacity: 1 !important;
+    pointer-events: auto;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 70%, rgba(0,255,255,0.18) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    z-index: 2;
+    font-size: 0.98em;
+  }
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+  .project-image {
+    filter: brightness(0.85);
+  }
+}
+
+.certificate_bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;   
+    font-weight: 600;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
